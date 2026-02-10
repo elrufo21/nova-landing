@@ -121,7 +121,7 @@ export function HomePage() {
       </section>
 
       {/* ───────── FEATURED PROJECTS (Gallery) ───────── */}
-      <section className="py-24 bg-brand-dark text-white relative">
+      <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-4">
@@ -148,7 +148,7 @@ export function HomePage() {
       </section>
 
       {/* ───────── TRUST & CERTIFICATIONS ───────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <MotionWrapper direction="right">
