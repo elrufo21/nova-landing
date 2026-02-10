@@ -44,7 +44,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.45,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -57,7 +57,7 @@ export default function ServicesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" as const }}
           viewport={{ once: true }}
           className="mb-16 max-w-2xl"
         >

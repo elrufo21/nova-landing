@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Seo } from "../../components/seo/Seo";
 import { PageHeader } from "../../components/ui/PageHeader";
-import { MapPin, Building, Filter, ArrowUpRight } from "lucide-react";
+import { MapPin, Building, ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/constants/company";
 import { motion, AnimatePresence } from "framer-motion";
 

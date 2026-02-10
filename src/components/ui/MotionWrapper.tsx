@@ -37,10 +37,10 @@ const variants = {
   }
 };
 
-export function MotionWrapper({ 
-  children, 
-  className = "", 
-  delay = 0, 
+export function MotionWrapper({
+  children,
+  className = "",
+  delay = 0,
   duration = 0.8,
   direction = "up",
   viewport = true
@@ -52,10 +52,10 @@ export function MotionWrapper({
       whileInView={viewport ? "visible" : undefined}
       animate={!viewport ? "visible" : undefined}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ 
-        duration, 
+      transition={{
+        duration,
         delay,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }}
       variants={variants[direction]}
     >

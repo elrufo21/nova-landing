@@ -2,7 +2,7 @@ import { Seo } from "../../components/seo/Seo";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ServiceCardPremium } from "../../components/ui/ServiceCardPremium";
 import { MotionWrapper } from "../../components/ui/MotionWrapper";
-import { Wrench, Settings, ShieldCheck, Clock, Award, CheckCircle, ArrowRight, Zap, FileText } from "lucide-react";
+import { Wrench, Settings, Clock, Award, CheckCircle, ArrowRight, Zap, FileText } from "lucide-react";
 
 export function ServiciosPage() {
   return (

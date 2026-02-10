@@ -6,20 +6,20 @@ interface ServiceCardNewProps {
   title: string;
   description: string;
   icon?: ReactNode;
-  image?: string;
+
   href?: string;
   delay?: number;
   featured?: boolean;
 }
 
-export function ServiceCardNew({ 
-  title, 
-  description, 
-  icon, 
-  image, 
-  href, 
+export function ServiceCardNew({
+  title,
+  description,
+  icon,
+
+  href,
   delay = 0,
-  featured = false 
+  featured = false
 }: ServiceCardNewProps) {
   const Wrapper = href ? "a" : "div";
 
@@ -40,7 +40,7 @@ export function ServiceCardNew({
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5" />
-          <div 
+          <div
             className="absolute inset-0 opacity-30"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dots' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='2' cy='2' r='1' fill='brand-primary' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23dots)'/%3E%3C/svg%3E")`
