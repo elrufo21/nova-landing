@@ -1,5 +1,5 @@
-import { Wrench, ShieldCheck, Headset, Phone, MessageCircle, Building, Users, Award, CheckCircle, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Wrench, ShieldCheck, Headset, MessageCircle, Building, Users, Award, CheckCircle, ArrowRight } from "lucide-react";
+
 import { Seo } from "../../components/seo/Seo";
 import { HeroSection } from "../../components/ui/HeroSection";
 import { ServiceCardPremium } from "../../components/ui/ServiceCardPremium";
@@ -215,7 +215,7 @@ export function HomePage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
         <div className="mx-auto max-w-5xl px-4 relative z-10 text-center">
-          <MotionWrapper scale>
+          <MotionWrapper direction="scale">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
               ¿Listo para elevar su proyecto?
             </h2>

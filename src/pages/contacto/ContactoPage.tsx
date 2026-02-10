@@ -9,9 +9,7 @@ import {
   MapPin,
   MessageCircle,
   Send,
-  Clock,
   CheckCircle,
-  Building,
   ArrowRight
 } from "lucide-react";
 import type { ContactForm } from "@/types";
