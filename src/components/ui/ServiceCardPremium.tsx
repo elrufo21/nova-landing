@@ -17,7 +17,7 @@ export function ServiceCardPremium({
   icon,
   image,
   href,
-  index = 0
+  index = 0,
 }: ServiceCardPremiumProps) {
   const Wrapper = href ? "a" : "div";
 
@@ -37,24 +37,25 @@ export function ServiceCardPremium({
         <div className="relative h-48 w-full overflow-hidden bg-brand-dark">
           {image ? (
             <div className="absolute inset-0">
-               <img 
-                src={image} 
+              <img
+                src={image}
                 alt={title}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" 
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark to-brand-primary/20 mix-blend-multiply" />
             </div>
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-brand-dark to-brand-primary opacity-20">
-               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
             </div>
           )}
-          
+
           {/* Floating Icon */}
-          <div className="absolute -bottom-8 left-8">
-             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-xl text-brand-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 border-4 border-white">
-                {icon || <Plus className="h-8 w-8" />}
-             </div>
+        </div>
+        {/* Icon Floating Between Header & Content */}
+        <div className="relative z-10 -mt-8 mb-4 px-8">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-xl text-brand-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 border-4 border-white">
+            {icon || <Plus className="h-8 w-8" />}
           </div>
         </div>
 
@@ -63,25 +64,25 @@ export function ServiceCardPremium({
           <h3 className="mb-3 text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">
             {title}
           </h3>
-          
+
           <p className="mb-6 flex-1 text-slate-600 leading-relaxed">
             {description}
           </p>
-          
+
           {/* Footer / Action */}
           <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
-             <span className="text-sm font-semibold text-brand-secondary group-hover:text-brand-primary transition-colors">
-               Explorar Servicio
-             </span>
-             <motion.div
-                className="rounded-full bg-slate-50 p-2 text-brand-dark group-hover:bg-brand-primary group-hover:text-white transition-colors"
-                whileHover={{ rotate: -45 }}
-             >
-               <ArrowRight className="h-4 w-4" />
-             </motion.div>
+            <span className="text-sm font-semibold text-brand-secondary group-hover:text-brand-primary transition-colors">
+              Explorar Servicio
+            </span>
+            <motion.div
+              className="rounded-full bg-slate-50 p-2 text-brand-dark group-hover:bg-brand-primary group-hover:text-white transition-colors"
+              whileHover={{ rotate: -45 }}
+            >
+              <ArrowRight className="h-4 w-4" />
+            </motion.div>
           </div>
         </div>
-        
+
         {/* Hover Border Effect */}
         <div className="absolute inset-0 pointer-events-none border-2 border-transparent rounded-3xl transition-colors duration-500 group-hover:border-brand-primary/10" />
       </Wrapper>

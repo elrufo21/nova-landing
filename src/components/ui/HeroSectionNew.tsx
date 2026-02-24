@@ -6,6 +6,7 @@ interface HeroSectionProps {
   title: string;
   subtitle: string;
   image?: string;
+  backgroundVideo?: string;
   actions?: Array<{
     label: string;
     href?: string;
@@ -15,17 +16,34 @@ interface HeroSectionProps {
   children?: ReactNode;
 }
 
-export function HeroSection({ 
-  title, 
-  subtitle, 
-  image, 
+export function HeroSection({
+  title,
+  subtitle,
+  image,
+  backgroundVideo = "/videoHero.mp4",
   actions = [],
-  children 
+  children,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900">
-      {/* Animated Background Elements */}
+    <section className="relative min-h-screen overflow-hidden bg-slate-900">
+      {/* Video Background */}
       <div className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-brand-dark/80 to-slate-900/85" />
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 z-[1]">
         <motion.div
           className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl"
           animate={{
@@ -35,7 +53,7 @@ export function HeroSection({
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
         <motion.div
@@ -47,7 +65,7 @@ export function HeroSection({
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
         <motion.div
@@ -59,16 +77,16 @@ export function HeroSection({
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
       </div>
 
       {/* Grid Pattern Overlay */}
-      <div 
-        className="absolute inset-0 opacity-20" 
+      <div
+        className="absolute inset-0 z-[1] opacity-20"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='white' stroke-width='0.5' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='white' stroke-width='0.5' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
         }}
       />
 
@@ -93,7 +111,7 @@ export function HeroSection({
                     Ingeniería Vertical
                   </span>
                 </motion.div>
-                
+
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -102,7 +120,7 @@ export function HeroSection({
                 >
                   {title}
                 </motion.h1>
-                
+
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -129,9 +147,10 @@ export function HeroSection({
                       onClick={action.onClick}
                       className={`
                         relative overflow-hidden group px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300
-                        ${action.variant === "secondary" 
-                          ? "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20" 
-                          : "bg-brand-primary text-white hover:bg-brand-accent shadow-xl hover:shadow-2xl"
+                        ${
+                          action.variant === "secondary"
+                            ? "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20"
+                            : "bg-brand-primary text-white hover:bg-brand-accent shadow-xl hover:shadow-2xl"
                         }
                       `}
                     >
@@ -143,7 +162,7 @@ export function HeroSection({
                           <ArrowRight className="w-5 h-5" />
                         )}
                       </span>
-                      
+
                       {/* Animated background for primary button */}
                       {action.variant !== "secondary" && (
                         <motion.div
@@ -166,8 +185,8 @@ export function HeroSection({
               transition={{ duration: 1.2, delay: 0.8 }}
               className="relative"
             >
-              {children || (
-                image && (
+              {children ||
+                (image && (
                   <div className="relative">
                     {/* Glow effect */}
                     <motion.div
@@ -178,10 +197,10 @@ export function HeroSection({
                       transition={{
                         duration: 10,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: "easeInOut",
                       }}
                     />
-                    
+
                     {/* Main image container */}
                     <div className="relative bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 p-8 rounded-3xl backdrop-blur-sm">
                       <div className="aspect-square rounded-2xl overflow-hidden bg-slate-800/50">
@@ -190,10 +209,10 @@ export function HeroSection({
                           alt="NOVA ASCENSORES - Soluciones de ingeniería vertical"
                           className="w-full h-full object-cover"
                         />
-                        
+
                         {/* Overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
-                        
+
                         {/* Floating elements */}
                         <motion.div
                           className="absolute top-4 right-4 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center"
@@ -203,7 +222,7 @@ export function HeroSection({
                           transition={{
                             duration: 4,
                             repeat: Infinity,
-                            ease: "easeInOut"
+                            ease: "easeInOut",
                           }}
                         >
                           <Play className="w-6 h-6 text-white" />
@@ -211,8 +230,7 @@ export function HeroSection({
                       </div>
                     </div>
                   </div>
-                )
-              )}
+                ))}
             </motion.div>
           </div>
         </div>

@@ -69,10 +69,12 @@ export function Navbar() {
       <div className="border-b border-slate-200/60 bg-white/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           {/* LOGO */}
-          <div className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-brand-dark">
-            <span className="inline-block h-2 w-2 rounded-full bg-brand-highlight" />
-            <span className="hidden sm:inline">NOVA</span>
-            <span className="sm:hidden">NOVA</span>
+          <div className="flex items-center">
+            <img
+              src="/LOGO.png"
+              alt="NOVA"
+              className="h-10 w-auto sm:h-12"
+            />
           </div>
 
           {/* DESKTOP MENU */}

@@ -1,4 +1,11 @@
-import { ArrowRight, Wrench, ShieldCheck, Headset, Phone, MessageCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Wrench,
+  ShieldCheck,
+  Headset,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
 import { Hero } from "../../components/hero";
 import { ServiceCard } from "../../components/servicesCard";
 import { Seo } from "../../components/seo/Seo";
@@ -20,15 +27,15 @@ export function HomePage() {
         subtitle="Fabricación, instalación, mantenimiento y reparación con personal especializado y cumplimiento de normas técnicas vigentes."
         image="/nova.jpg"
         actions={[
-          { 
-            label: "Cotizar ahora", 
+          {
+            label: "Cotizar ahora",
             href: "/contacto",
-            variant: "primary"
+            variant: "primary",
           },
-          { 
-            label: "WhatsApp", 
-            href: `https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, '')}`,
-            variant: "secondary"
+          {
+            label: "WhatsApp",
+            href: `https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, "")}`,
+            variant: "secondary",
           },
         ]}
       />
@@ -41,8 +48,8 @@ export function HomePage() {
               Nuestros Servicios
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-slate-600">
-              Brindamos soluciones completas para el transporte vertical, 
-              desde la fabricación hasta el mantenimiento especializado.
+              Brindamos soluciones completas para el transporte vertical, desde
+              la fabricación hasta el mantenimiento especializado.
             </p>
           </div>
 
@@ -50,17 +57,20 @@ export function HomePage() {
             {[
               {
                 title: "Fabricación de Ascensores",
-                description: "Diseñamos y construimos ascensores a medida según las necesidades específicas de cada proyecto.",
+                description:
+                  "Diseñamos y construimos ascensores a medida según las necesidades específicas de cada proyecto.",
                 icon: <Wrench className="h-6 w-6" />,
               },
               {
                 title: "Instalación Profesional",
-                description: "Instalación experta de ascensores eléctricos, camilleros y de carga con garantía de seguridad.",
+                description:
+                  "Instalación experta de ascensores eléctricos, camilleros y de carga con garantía de seguridad.",
                 icon: <ShieldCheck className="h-6 w-6" />,
               },
               {
                 title: "Mantenimiento Integral",
-                description: "Planes de mantenimiento preventivo y correctivo para asegurar la operatividad continua.",
+                description:
+                  "Planes de mantenimiento preventivo y correctivo para asegurar la operatividad continua.",
                 icon: <Headset className="h-6 w-6" />,
               },
             ].map((service, idx) => (
@@ -85,8 +95,9 @@ export function HomePage() {
               ¿Por qué elegir NOVA ASCENSORES?
             </h2>
             <p className="mt-4 text-slate-700">
-              Trabajamos bajo estándares técnicos exigentes con enfoque en 
-              seguridad, confiabilidad y soporte continuo para nuestros clientes.
+              Trabajamos bajo estándares técnicos exigentes con enfoque en
+              seguridad, confiabilidad y soporte continuo para nuestros
+              clientes.
             </p>
           </div>
 
@@ -109,9 +120,7 @@ export function HomePage() {
               },
             ].map(({ icon: Icon, title, desc }, idx) => (
               <AnimatedSection key={title} delay={idx * 0.1}>
-                <div
-                  className="rounded-2xl bg-white p-8 shadow-sm transition hover:shadow-lg"
-                >
+                <div className="rounded-2xl bg-white p-8 shadow-sm transition hover:shadow-lg">
                   <Icon className="h-7 w-7 text-brand-primary" />
                   <h3 className="mt-4 text-xl font-bold text-brand-dark">
                     {title}
@@ -133,7 +142,7 @@ export function HomePage() {
                 Proyectos y Clientes
               </h2>
               <p className="mt-4 text-slate-600">
-                Nuestra experiencia está respaldada por trabajos realizados en 
+                Nuestra experiencia está respaldada por trabajos realizados en
                 instituciones públicas, hospitales y edificios corporativos.
               </p>
             </div>
@@ -172,8 +181,9 @@ export function HomePage() {
             Confía tu ascensor a manos expertas
           </h2>
           <p className="mt-6 text-white/80">
-            Solicita una cotización o contáctanos para brindarte una solución 
-            segura, eficiente y duradera para tus proyectos de transporte vertical.
+            Solicita una cotización o contáctanos para brindarte una solución
+            segura, eficiente y duradera para tus proyectos de transporte
+            vertical.
           </p>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -185,7 +195,7 @@ export function HomePage() {
               Cotizar ahora
             </a>
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, '')}`}
+              href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 px-10 py-4 font-semibold text-white transition hover:bg-white/10"

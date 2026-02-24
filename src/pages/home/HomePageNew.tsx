@@ -3,7 +3,6 @@ import { Wrench, ShieldCheck, Headset, MessageCircle, Building, Users, Award, Ch
 import { Seo } from "../../components/seo/Seo";
 import { HeroSection } from "../../components/ui/HeroSection";
 import { ServiceCardPremium } from "../../components/ui/ServiceCardPremium";
-import { StatsSection } from "../../components/ui/StatsSection";
 import { ProjectGallery } from "../../components/ui/ProjectGallery";
 import { MotionWrapper } from "../../components/ui/MotionWrapper";
 import { COMPANY_INFO } from "@/constants/company";
@@ -34,42 +33,33 @@ export function HomePage() {
             variant: "secondary"
           },
         ]}
+        stats={[
+          {
+            number: "12+",
+            label: "Años de Excelencia",
+            icon: <Building className="w-5 h-5" />,
+            delay: 0
+          },
+          {
+            number: "600+",
+            label: "Proyectos Ejecutados",
+            icon: <Award className="w-5 h-5" />,
+            delay: 0.1
+          },
+          {
+            number: "98%",
+            label: "Satisfacción Cliente",
+            icon: <Users className="w-5 h-5" />,
+            delay: 0.2
+          },
+          {
+            number: "24/7",
+            label: "Respuesta Inmediata",
+            icon: <Headset className="w-5 h-5" />,
+            delay: 0.3
+          }
+        ]}
       />
-
-      {/* ───────── STATS SECTION (Dark Theme) ───────── */}
-      <div className="bg-brand-dark border-b border-white/5">
-        <StatsSection
-          title=""
-          subtitle=""
-          background="dark"
-          stats={[
-            {
-              number: "12+",
-              label: "Años de Excelencia",
-              icon: <Building className="w-6 h-6" />,
-              delay: 0
-            },
-            {
-              number: "600+",
-              label: "Proyectos Ejecutados",
-              icon: <Award className="w-6 h-6" />,
-              delay: 0.1
-            },
-            {
-              number: "98%",
-              label: "Satisfacción Cliente",
-              icon: <Users className="w-6 h-6" />,
-              delay: 0.2
-            },
-            {
-              number: "24/7",
-              label: "Respuesta Inmediata",
-              icon: <Headset className="w-6 h-6" />,
-              delay: 0.3
-            }
-          ]}
-        />
-      </div>
 
       {/* ───────── SERVICES SECTION ───────── */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
