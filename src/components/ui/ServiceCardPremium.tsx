@@ -31,10 +31,10 @@ export function ServiceCardPremium({
     >
       <Wrapper
         {...(href && { href })}
-        className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-100"
+        className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
       >
         {/* Image Header / Background Area */}
-        <div className="relative h-48 w-full overflow-hidden bg-brand-dark">
+        <div className="relative h-44 w-full overflow-hidden bg-brand-dark sm:h-48">
           {image ? (
             <div className="absolute inset-0">
               <img
@@ -53,24 +53,24 @@ export function ServiceCardPremium({
           {/* Floating Icon */}
         </div>
         {/* Icon Floating Between Header & Content */}
-        <div className="relative z-10 -mt-8 mb-4 px-8">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-xl text-brand-primary transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 border-4 border-white">
+        <div className="relative z-10 -mt-7 mb-3 px-6 sm:-mt-8 sm:mb-4 sm:px-8">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-white bg-white text-brand-primary shadow-xl transition-transform duration-500 group-hover:rotate-3 group-hover:scale-110 sm:h-16 sm:w-16">
             {icon || <Plus className="h-8 w-8" />}
           </div>
         </div>
 
         {/* Content Body */}
-        <div className="flex flex-1 flex-col pt-12 pb-8 px-8">
-          <h3 className="mb-3 text-2xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">
+        <div className="flex flex-1 flex-col px-6 pb-6 pt-8 sm:px-8 sm:pb-8 sm:pt-12">
+          <h3 className="mb-3 text-xl font-bold text-brand-dark transition-colors group-hover:text-brand-primary sm:text-2xl">
             {title}
           </h3>
 
-          <p className="mb-6 flex-1 text-slate-600 leading-relaxed">
+          <p className="mb-5 flex-1 text-sm leading-relaxed text-slate-600 sm:mb-6 sm:text-base">
             {description}
           </p>
 
           {/* Footer / Action */}
-          <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
+          <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
             <span className="text-sm font-semibold text-brand-secondary group-hover:text-brand-primary transition-colors">
               Explorar Servicio
             </span>

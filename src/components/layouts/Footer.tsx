@@ -11,11 +11,11 @@ import { COMPANY_INFO, NAVIGATION_ITEMS } from "@/constants/company";
 export function Footer() {
   return (
     <footer className="border-t border-slate-200/60 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:py-12">
         <div className="grid gap-10 md:grid-cols-4 md:items-start">
           {/* ───── BRAND ───── */}
           <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-brand-dark">
+            <div className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-brand-dark sm:text-xl">
               <span className="inline-block h-2 w-2 rounded-full bg-brand-highlight" />
               NOVA ASCENSORES
             </div>
@@ -28,24 +28,24 @@ export function Footer() {
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-slate-600">
-                <MapPin size={16} className="text-brand-primary" />
-                <span>{COMPANY_INFO.address}</span>
+              <div className="flex items-start gap-3 text-sm text-slate-600">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-brand-primary" />
+                <span className="break-words">{COMPANY_INFO.address}</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-600">
-                <Phone size={16} className="text-brand-primary" />
+                <Phone size={16} className="shrink-0 text-brand-primary" />
                 <a
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="hover:text-brand-primary transition"
+                  className="break-words hover:text-brand-primary transition"
                 >
                   {COMPANY_INFO.phone}
                 </a>
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-600">
-                <Mail size={16} className="text-brand-primary" />
+                <Mail size={16} className="shrink-0 text-brand-primary" />
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="hover:text-brand-primary transition"
+                  className="break-all hover:text-brand-primary transition"
                 >
                   {COMPANY_INFO.email}
                 </a>

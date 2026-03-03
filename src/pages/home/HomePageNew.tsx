@@ -72,7 +72,7 @@ export function HomePage() {
       />
 
       {/* ───────── SERVICES SECTION ───────── */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="relative overflow-hidden bg-slate-50 py-16 md:py-24">
         {/* Background Pattern */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -85,21 +85,21 @@ export function HomePage() {
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <MotionWrapper direction="up">
-            <div className="text-center mb-16">
+            <div className="mb-12 text-center md:mb-16">
               <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">
                 Nuestras Soluciones
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">
+              <h2 className="mb-5 text-3xl font-bold text-brand-dark sm:text-4xl md:mb-6 md:text-5xl">
                 Ciclo Integral de Servicio
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-base text-slate-600 sm:text-lg">
                 Gestión completa de sus activos verticales, desde el diseño y
                 fabricación hasta la modernización y mantenimiento preventivo.
               </p>
             </div>
           </MotionWrapper>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 h-auto">
+          <div className="grid h-auto gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             <ServiceCardPremium
               title="Fabricación a Medida"
               description="Diseño y manufactura de cabinas y sistemas de elevación personalizados, adaptados a la arquitectura de su proyecto y normativas vigentes."
@@ -129,17 +129,17 @@ export function HomePage() {
       </section>
 
       {/* ───────── FEATURED PROJECTS (Gallery) ───────── */}
-      <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
+      <section className="relative overflow-hidden bg-brand-dark py-16 text-white md:py-24">
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="mb-10 flex flex-col items-start justify-between gap-5 md:mb-12 md:flex-row md:items-end md:gap-6">
             <MotionWrapper direction="right">
               <div>
                 <span className="text-brand-highlight font-bold tracking-wider uppercase text-sm mb-2 block">
                   Portafolio
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <h2 className="mb-3 text-3xl font-bold sm:text-4xl md:mb-4 md:text-5xl">
                   Proyectos Emblemáticos
                 </h2>
                 <p className="text-slate-400 max-w-xl">
@@ -166,9 +166,9 @@ export function HomePage() {
       </section>
 
       {/* ───────── TRUST & CERTIFICATIONS ───────── */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="overflow-hidden bg-white py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <MotionWrapper direction="right">
               <div className="relative">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 relative z-10">
@@ -177,9 +177,9 @@ export function HomePage() {
                     alt="Equipo técnico NOVA"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent flex items-end p-8">
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-brand-dark/80 to-transparent p-5 sm:p-8">
                     <div className="text-white">
-                      <p className="font-bold text-lg">
+                      <p className="text-base font-bold sm:text-lg">
                         Equipo Técnico Calificado
                       </p>
                       <p className="text-sm opacity-80">
@@ -189,22 +189,22 @@ export function HomePage() {
                   </div>
                 </div>
                 {/* Decorative Blob */}
-                <div className="absolute -bottom-10 -left-10 w-full h-full bg-brand-soft rounded-3xl -z-0" />
+                <div className="absolute -bottom-8 -left-8 -z-0 h-full w-full rounded-3xl bg-brand-soft sm:-bottom-10 sm:-left-10" />
               </div>
             </MotionWrapper>
 
             <MotionWrapper direction="left">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                <h2 className="mb-5 text-2xl font-bold text-brand-dark sm:text-3xl md:mb-6 md:text-4xl">
                   Seguridad y Confianza Certificada
                 </h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                <p className="mb-7 text-base leading-relaxed text-slate-600 sm:text-lg md:mb-8">
                   No solo instalamos ascensores, garantizamos tranquilidad.
                   Nuestros procesos cumplen con los más estrictos estándares
                   internacionales y normativas locales.
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                   {[
                     "Normativa EN-81",
                     "ISO 9001:2015",
@@ -217,7 +217,7 @@ export function HomePage() {
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
                         <CheckCircle size={14} strokeWidth={3} />
                       </div>
-                      <span className="font-medium text-slate-700">{item}</span>
+                      <span className="text-sm font-medium text-slate-700 sm:text-base">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -225,7 +225,7 @@ export function HomePage() {
                 <div className="mt-10">
                   <a
                     href="/garantia"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 rounded-xl text-brand-dark font-semibold hover:border-brand-primary hover:text-brand-primary transition-colors bg-white"
+                    className="inline-flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-brand-dark transition-colors hover:border-brand-primary hover:text-brand-primary sm:w-auto"
                   >
                     Conocer más sobre nuestra garantía
                   </a>
@@ -237,31 +237,38 @@ export function HomePage() {
       </section>
 
       {/* ───────── FINAL CTA ───────── */}
-      <section className="relative py-24 bg-brand-primary overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/pattern-grid.png')] opacity-10" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <section className="relative overflow-hidden bg-brand-primary py-16 md:py-24">
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.25) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="absolute right-0 top-0 h-[320px] w-[320px] -translate-y-1/2 translate-x-1/2 rounded-full bg-white/10 blur-3xl sm:h-[500px] sm:w-[500px]" />
 
         <div className="mx-auto max-w-5xl px-4 relative z-10 text-center">
           <MotionWrapper direction="scale">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <h2 className="mb-5 text-3xl font-black text-white sm:text-4xl md:mb-6 md:text-5xl">
               ¿Listo para elevar su proyecto?
             </h2>
-            <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            <p className="mx-auto mb-8 max-w-2xl text-base text-blue-100 sm:text-lg md:mb-10 md:text-xl">
               Solicite una visita técnica gratuita o una cotización
               personalizada. Nuestro equipo de ingenieros está listo para
               asesorarlo.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a
                 href="/contacto"
-                className="px-8 py-4 bg-white text-brand-primary font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="w-full rounded-xl bg-white px-8 py-4 font-bold text-brand-primary shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:w-auto"
               >
                 Solicitar Cotización
               </a>
               <a
                 href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, "")}`}
-                className="px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-xl hover:bg-brand-dark/90 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-dark px-8 py-4 font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-brand-dark/90 sm:w-auto"
               >
                 <MessageCircle size={20} />
                 Chat por WhatsApp

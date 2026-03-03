@@ -66,14 +66,14 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className="border-b border-slate-200/60 bg-white/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+      <div className="border-b border-slate-200/60 bg-white/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:py-4">
           {/* LOGO */}
           <div className="flex items-center">
             <img
               src="/LOGO.png"
               alt="NOVA"
-              className="h-10 w-auto sm:h-12"
+              className="h-9 w-auto sm:h-11"
             />
           </div>
 
@@ -102,25 +102,25 @@ export function Navbar() {
 
           {/* MOBILE BUTTON */}
           <button
-            className="md:hidden rounded-lg p-2 text-brand-dark transition hover:bg-brand-soft"
+            className="rounded-lg p-2 text-brand-dark transition hover:bg-brand-soft md:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Abrir menú"
           >
-            {open ? <X size={26} /> : <Menu size={26} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* ───────────── MOBILE MENU ───────────── */}
         {open && (
-          <div className="md:hidden bg-white/95 backdrop-blur-xl">
-            <nav className="mx-4 my-4 rounded-2xl border border-slate-200/60 p-6 shadow-lg">
+          <div className="border-t border-slate-200/60 bg-white/95 backdrop-blur-xl md:hidden">
+            <nav className="mx-4 my-4 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-slate-200/60 p-5 shadow-lg sm:p-6">
               <div className="flex flex-col gap-6">
                 {NAVIGATION_ITEMS.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-slate-700 transition hover:text-brand-primary"
+                    className="text-base font-medium text-slate-700 transition hover:text-brand-primary"
                   >
                     {item.label}
                   </a>
@@ -128,30 +128,45 @@ export function Navbar() {
 
                 <a
                   href="/contacto"
-                  className="mt-2 rounded-xl bg-brand-primary py-3 text-lg font-semibold text-white shadow hover:bg-brand-accent transition text-center"
+                  className="mt-2 rounded-xl bg-brand-primary py-3 text-base font-semibold text-white shadow transition hover:bg-brand-accent text-center"
                 >
                   Cotizar
                 </a>
 
                 {/* Redes */}
-                <div className="mt-6 flex items-center gap-6 border-t pt-4 text-brand-dark">
+                <div className="mt-4 flex items-center gap-5 border-t pt-4 text-brand-dark">
                   {COMPANY_INFO.social.facebook && (
-                    <Facebook
-                      size={22}
-                      className="cursor-pointer hover:text-brand-highlight transition"
-                    />
+                    <a
+                      href={COMPANY_INFO.social.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="transition hover:text-brand-highlight"
+                    >
+                      <Facebook size={22} />
+                    </a>
                   )}
                   {COMPANY_INFO.social.instagram && (
-                    <Instagram
-                      size={22}
-                      className="cursor-pointer hover:text-brand-highlight transition"
-                    />
+                    <a
+                      href={COMPANY_INFO.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="transition hover:text-brand-highlight"
+                    >
+                      <Instagram size={22} />
+                    </a>
                   )}
                   {COMPANY_INFO.social.linkedin && (
-                    <Linkedin
-                      size={22}
-                      className="cursor-pointer hover:text-brand-highlight transition"
-                    />
+                    <a
+                      href={COMPANY_INFO.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="transition hover:text-brand-highlight"
+                    >
+                      <Linkedin size={22} />
+                    </a>
                   )}
                 </div>
               </div>

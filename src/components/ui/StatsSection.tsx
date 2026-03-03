@@ -36,7 +36,7 @@ export function StatsSection({
   };
 
   return (
-    <section className={`py-20 lg:py-32 ${bgClasses[background]}`}>
+    <section className={`py-16 lg:py-32 ${bgClasses[background]}`}>
       <div className="mx-auto max-w-7xl px-4">
         {/* Header */}
         <motion.div
@@ -44,7 +44,7 @@ export function StatsSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="mb-12 text-center md:mb-20"
         >
           <h2
             className={`text-3xl lg:text-4xl font-bold mb-6 ${textClasses[background]}`}
@@ -59,7 +59,7 @@ export function StatsSection({
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -70,7 +70,7 @@ export function StatsSection({
                 delay: stat.delay || index * 0.1,
               }}
               className={`
-                relative text-center p-8 rounded-2xl
+                relative rounded-2xl p-6 text-center sm:p-8
                 ${background === "light" ? "bg-slate-50 border border-slate-200" : ""}
                 ${background === "dark" ? "bg-slate-800/50 border border-slate-700" : ""}
                 ${background === "gradient" ? "bg-white/10 backdrop-blur-sm border border-white/20" : ""}

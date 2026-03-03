@@ -2,7 +2,16 @@ import { Seo } from "../../components/seo/Seo";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ServiceCardPremium } from "../../components/ui/ServiceCardPremium";
 import { MotionWrapper } from "../../components/ui/MotionWrapper";
-import { Wrench, Settings, Clock, Award, CheckCircle, ArrowRight, Zap, FileText } from "lucide-react";
+import {
+  Wrench,
+  Settings,
+  Clock,
+  Award,
+  CheckCircle,
+  ArrowRight,
+  Zap,
+  FileText,
+} from "lucide-react";
 
 export function ServiciosPage() {
   return (
@@ -16,27 +25,29 @@ export function ServiciosPage() {
       <PageHeader
         title="Soluciones Integrales"
         subtitle="Dominamos todo el ciclo de vida del transporte vertical. Desde el diseño conceptual hasta el mantenimiento predictivo."
-        image="/services/services-hero.jpg"
+        image="/novanostros.webp"
         breadcrumbs={[{ label: "Servicios" }]}
       />
 
       {/* ───────── MAIN SERVICES GRID ───────── */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="relative overflow-hidden bg-slate-50 py-16 md:py-24">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <MotionWrapper direction="up">
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+            <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+              <h2 className="mb-4 text-2xl font-bold text-brand-dark sm:text-3xl md:text-4xl">
                 Excelencia Técnica en Cada Etapa
               </h2>
-              <p className="text-lg text-slate-600">
-                Combinamos ingeniería de precisión con un servicio al cliente excepcional para garantizar la seguridad y continuidad operativa de sus equipos.
+              <p className="text-base text-slate-600 sm:text-lg">
+                Combinamos ingeniería de precisión con un servicio al cliente
+                excepcional para garantizar la seguridad y continuidad operativa
+                de sus equipos.
               </p>
             </div>
           </MotionWrapper>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
             <ServiceCardPremium
               title="Fabricación de Ascensores"
               description="Diseñamos y fabricamos cabinas y sistemas de elevación a medida, adaptándonos a las especificaciones arquitectónicas más exigentes. Utilizamos componentes de marcas reconocidas mundialmente."
@@ -74,12 +85,16 @@ export function ServiciosPage() {
       </section>
 
       {/* ───────── PROCESS TIMELINE ───────── */}
-      <section className="py-24 bg-white">
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <MotionWrapper direction="left">
-            <div className="mb-16">
-              <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">Metodología NOVA</span>
-              <h2 className="text-4xl font-bold text-brand-dark">Nuestro Proceso de Trabajo</h2>
+            <div className="mb-12 md:mb-16">
+              <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">
+                Metodología NOVA
+              </span>
+              <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+                Nuestro Proceso de Trabajo
+              </h2>
             </div>
           </MotionWrapper>
 
@@ -87,43 +102,49 @@ export function ServiciosPage() {
             {/* Connector Line (Desktop) */}
             <div className="hidden lg:block absolute top-12 left-0 w-full h-1 bg-brand-soft" />
 
-            <div className="grid gap-12 lg:grid-cols-4">
+            <div className="grid gap-10 sm:gap-12 lg:grid-cols-4">
               {[
                 {
                   step: "01",
                   title: "Diagnóstico",
-                  description: "Evaluación técnica detallada y relevamiento de necesidades en sitio.",
-                  icon: <FileText />
+                  description:
+                    "Evaluación técnica detallada y relevamiento de necesidades en sitio.",
+                  icon: <FileText />,
                 },
                 {
                   step: "02",
                   title: "Ingeniería",
-                  description: "Diseño de la solución y planificación logística del proyecto.",
-                  icon: <Settings />
+                  description:
+                    "Diseño de la solución y planificación logística del proyecto.",
+                  icon: <Settings />,
                 },
                 {
                   step: "03",
                   title: "Ejecución",
-                  description: "Implementación bajo supervisión constante y control de calidad.",
-                  icon: <Wrench />
+                  description:
+                    "Implementación bajo supervisión constante y control de calidad.",
+                  icon: <Wrench />,
                 },
                 {
                   step: "04",
                   title: "Certificación",
-                  description: "Pruebas de carga, seguridad y entrega de dossier de calidad.",
-                  icon: <Award />
-                }
+                  description:
+                    "Pruebas de carga, seguridad y entrega de dossier de calidad.",
+                  icon: <Award />,
+                },
               ].map((item, idx) => (
                 <MotionWrapper key={idx} delay={idx * 0.2}>
                   <div className="relative pt-8 lg:pt-0">
-                    <div className="w-24 h-24 bg-white border-4 border-brand-soft rounded-full flex items-center justify-center text-brand-primary relative z-10 mb-6 mx-auto lg:mx-0 shadow-lg">
+                    <div className="relative z-10 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-4 border-brand-soft bg-white text-brand-primary shadow-lg sm:h-24 sm:w-24 lg:mx-0">
                       <span className="sr-only">{item.step}</span>
                       {item.icon}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-highlight text-white rounded-full flex items-center justify-center font-bold text-sm border-2 border-white">
+                      <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-brand-highlight text-sm font-bold text-white">
                         {item.step}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">{item.title}</h3>
+                    <h3 className="text-xl font-bold text-brand-dark mb-3 text-center lg:text-left">
+                      {item.title}
+                    </h3>
                     <p className="text-slate-600 leading-relaxed text-center lg:text-left text-sm">
                       {item.description}
                     </p>
@@ -136,43 +157,56 @@ export function ServiciosPage() {
       </section>
 
       {/* ───────── FEATURE HIGHLIGHTS ───────── */}
-      <section className="py-20 bg-brand-dark text-white rounded-t-[3rem] -mt-10 relative z-20">
+      <section className="relative z-20 -mt-10 rounded-t-[3rem] bg-brand-dark py-16 text-white md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Por qué elegir NOVA Servicios</h2>
+              <h2 className="mb-6 text-2xl font-bold sm:text-3xl">
+                Por qué elegir NOVA Servicios
+              </h2>
               <div className="space-y-6">
                 {[
                   "Técnicos certificados con SCTR y EPPs normados.",
                   "Atención de emergencias 24/7 los 365 días.",
                   "Stock permanente de repuestos multimarca.",
                   "Garantía extendida en trabajos correctivos.",
-                  "Informes técnicos digitales con registro fotográfico."
+                  "Informes técnicos digitales con registro fotográfico.",
                 ].map((feat, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="p-1 bg-brand-primary/20 rounded-full mt-1">
                       <CheckCircle size={16} className="text-brand-primary" />
                     </div>
-                    <p className="text-slate-300 font-medium">{feat}</p>
+                    <p className="font-medium text-slate-300">{feat}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-10">
-                <a href="/contacto" className="inline-flex items-center gap-2 text-white font-bold border-b border-brand-primary pb-1 hover:text-brand-primary transition-colors">
+                <a
+                  href="/contacto"
+                  className="inline-flex items-center gap-2 text-white font-bold border-b border-brand-primary pb-1 hover:text-brand-primary transition-colors"
+                >
                   Solicitar Visita Técnica <ArrowRight size={18} />
                 </a>
               </div>
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <img src="/services/tech-tablet.jpg" alt="Tecnología en servicio" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" />
+              <div className="aspect-square overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                <img
+                  src="/services/tech-tablet.jpg"
+                  alt="Tecnología en servicio"
+                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                />
                 {/* Overlay Stats */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10">
-                  <div className="flex justify-between items-end">
+                <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/10 bg-white/10 p-4 backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6 sm:p-6">
+                  <div className="flex items-end justify-between gap-4">
                     <div>
-                      <p className="text-xs text-brand-primary uppercase tracking-wider font-bold mb-1">Tiempo de Respuesta</p>
-                      <p className="text-2xl font-bold text-white">&lt; 4 Horas</p>
+                      <p className="text-xs text-brand-primary uppercase tracking-wider font-bold mb-1">
+                        Tiempo de Respuesta
+                      </p>
+                      <p className="text-xl font-bold text-white sm:text-2xl">
+                        &lt; 4 Horas
+                      </p>
                     </div>
                     <Zap className="text-brand-highlight" />
                   </div>

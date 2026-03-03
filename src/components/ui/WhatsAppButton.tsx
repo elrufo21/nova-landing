@@ -9,11 +9,11 @@ export function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 group"
+      className="group fixed bottom-4 right-4 z-50 rounded-full bg-green-500 p-3 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-green-600 sm:bottom-6 sm:right-6 sm:p-4"
       aria-label="Contactar por WhatsApp"
     >
-      <MessageCircle className="h-6 w-6" />
-      <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+      <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
+      <span className="pointer-events-none absolute right-full top-1/2 mr-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-800 px-3 py-2 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100 sm:block">
         ¿Necesitas ayuda? Chatea con nosotros
       </span>
     </a>

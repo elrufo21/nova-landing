@@ -62,7 +62,7 @@ export function ProjectGallery({ projects = DEFAULT_PROJECTS }: ProjectGalleryPr
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+        <div className="grid auto-rows-[240px] grid-cols-1 gap-4 sm:auto-rows-[280px] md:grid-cols-4 md:auto-rows-[300px]">
             {projects.map((project, idx) => (
                 <motion.div
                     key={project.id}
@@ -95,22 +95,22 @@ export function ProjectGallery({ projects = DEFAULT_PROJECTS }: ProjectGalleryPr
                     </div>
 
                     {/* Content Overlay */}
-                    <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
                         <div className="transform translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
-                            <span className="inline-block px-3 py-1 mb-3 text-xs font-bold text-white bg-brand-primary/80 backdrop-blur-sm rounded-full">
+                            <span className="mb-3 inline-block rounded-full bg-brand-primary/80 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
                                 {project.category}
                             </span>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                            <h3 className="mb-1 text-lg font-bold text-white sm:text-xl md:text-2xl">
                                 {project.title}
                             </h3>
-                            <div className="flex items-center gap-2 text-slate-300 text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 delay-75">
+                            <div className="flex items-center gap-2 text-sm text-slate-300 opacity-100 transition-opacity duration-300 md:opacity-0 md:delay-75 md:group-hover:opacity-100">
                                 <MapPin className="w-4 h-4" />
                                 {project.location}
                             </div>
                         </div>
 
                         {/* Hover Icon */}
-                        <div className="absolute top-6 right-6 bg-white text-brand-dark p-3 rounded-full opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-brand-primary hover:text-white">
+                        <div className="absolute right-4 top-4 hidden translate-y-4 transform rounded-full bg-white p-3 text-brand-dark opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-brand-primary hover:text-white sm:right-6 sm:top-6 md:block">
                             <ArrowUpRight className="w-5 h-5" />
                         </div>
                     </div>

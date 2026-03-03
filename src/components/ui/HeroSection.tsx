@@ -36,7 +36,7 @@ export function HeroSection({
   actions = [],
 }: HeroSectionProps) {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-brand-dark">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-brand-dark">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -66,30 +66,30 @@ export function HeroSection({
       />
 
       <motion.div
-        className="absolute -left-12 top-24 z-10 h-64 w-64 rounded-full bg-brand-primary/25 blur-3xl"
+        className="absolute -left-20 top-20 z-10 h-52 w-52 rounded-full bg-brand-primary/25 blur-3xl sm:-left-12 sm:top-24 sm:h-64 sm:w-64"
         animate={{ x: [0, 24, 0], y: [0, -16, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-16 right-10 z-10 h-80 w-80 rounded-full bg-brand-highlight/20 blur-3xl"
+        className="absolute bottom-16 right-0 z-10 h-56 w-56 rounded-full bg-brand-highlight/20 blur-3xl sm:right-10 sm:h-80 sm:w-80"
         animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Main Content */}
-      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
-        <div className="space-y-10">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 pb-14 pt-20 sm:px-6 sm:pt-24 lg:px-8">
+        <div className="space-y-8 sm:space-y-10">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Text Content */}
             <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="mb-6 flex items-center gap-3"
+                className="mb-5 flex items-center gap-3 sm:mb-6"
               >
                 <div className="h-1 w-12 rounded-full bg-brand-highlight" />
-                <span className="rounded-full border border-white/15 bg-white/10 px-4 py-1 text-sm font-bold uppercase tracking-widest text-brand-primary backdrop-blur-sm">
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand-primary backdrop-blur-sm sm:px-4 sm:text-sm">
                   Ingenieria Vertical
                 </span>
               </motion.div>
@@ -98,7 +98,7 @@ export function HeroSection({
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="mb-8 text-5xl font-black leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl"
+                className="mb-6 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
               >
                 {title}
               </motion.h1>
@@ -107,7 +107,7 @@ export function HeroSection({
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mb-10 max-w-xl border-l-4 border-brand-primary/40 pl-6 text-lg leading-relaxed text-slate-200 md:text-xl"
+                className="mb-8 max-w-xl border-l-4 border-brand-primary/40 pl-4 text-base leading-relaxed text-slate-200 sm:pl-6 sm:text-lg md:text-xl"
               >
                 {subtitle}
               </motion.p>
@@ -123,7 +123,7 @@ export function HeroSection({
                     key={idx}
                     href={action.href ?? "#"}
                     className={`
-                      group relative flex items-center justify-center gap-3 overflow-hidden rounded-xl px-8 py-4 text-lg font-bold transition-all duration-300
+                      group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-xl px-6 py-3.5 text-base font-bold transition-all duration-300 sm:w-auto sm:px-8 sm:py-4 sm:text-lg
                       ${
                         action.variant === "secondary"
                           ? "border border-white/20 bg-white/10 text-white backdrop-blur-md hover:bg-white/20"
@@ -225,7 +225,7 @@ export function HeroSection({
                     duration: 0.5,
                     delay: 1.05 + (stat.delay ?? index * 0.08),
                   }}
-                  className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl"
+                  className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-xl sm:p-5"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     {stat.icon && (
@@ -233,7 +233,7 @@ export function HeroSection({
                         {stat.icon}
                       </div>
                     )}
-                    <div className="text-3xl font-black tracking-tight text-white">
+                    <div className="text-2xl font-black tracking-tight text-white sm:text-3xl">
                       {stat.number}
                     </div>
                   </div>
@@ -252,7 +252,7 @@ export function HeroSection({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/60"
+        className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/60 sm:flex"
       >
         <span className="text-xs uppercase tracking-[0.2em]">Descubre Mas</span>
         <motion.div

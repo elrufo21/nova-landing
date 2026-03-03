@@ -16,14 +16,14 @@ export function QuienesSomosPage() {
       <PageHeader
         title="Nuestra Historia"
         subtitle="Más de una década definiendo los estándares de seguridad y eficiencia en el transporte vertical peruano."
-        image="/about/team-hero.jpg"
+        image="/novaqs.webp"
         breadcrumbs={[{ label: "Quiénes Somos" }]}
       />
 
       {/* ───────── MISSION & VISION ───────── */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="overflow-hidden bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Image Side */}
             <MotionWrapper direction="right">
               <div className="relative">
@@ -36,12 +36,14 @@ export function QuienesSomosPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent" />
 
-                  <div className="absolute bottom-0 left-0 p-8 text-white">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-brand-highlight text-white rounded-xl">
-                        <Target size={24} />
+                  <div className="absolute bottom-0 left-0 p-5 text-white sm:p-8">
+                    <div className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4">
+                      <div className="rounded-xl bg-brand-highlight p-2.5 text-white sm:p-3">
+                        <Target size={20} />
                       </div>
-                      <h3 className="text-2xl font-bold">Nuestra Misión</h3>
+                      <h3 className="text-xl font-bold sm:text-2xl">
+                        Nuestra Misión
+                      </h3>
                     </div>
                     <p className="text-white/90 leading-relaxed text-sm">
                       Proporcionar soluciones integrales en transporte vertical,
@@ -56,15 +58,15 @@ export function QuienesSomosPage() {
 
             {/* Text Side */}
             <MotionWrapper direction="left">
-              <div className="space-y-8">
-                <h2 className="text-4xl lg:text-5xl font-bold text-brand-dark relative">
+              <div className="space-y-6 sm:space-y-8">
+                <h2 className="relative text-3xl font-bold text-brand-dark sm:text-4xl lg:text-5xl">
                   <span className="relative z-10">
                     Ingeniería con Propósito
                   </span>
                   <div className="absolute -bottom-2 left-0 w-24 h-2 bg-brand-primary/20 -z-0" />
                 </h2>
 
-                <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <div className="space-y-5 text-base leading-relaxed text-slate-600 sm:space-y-6 sm:text-lg">
                   <p>
                     <strong className="text-brand-dark">NOVA ASCENSORES</strong>{" "}
                     nace de la visión de transformar la industria del transporte
@@ -94,7 +96,14 @@ export function QuienesSomosPage() {
 
       {/* ───────── STATS ───────── */}
       <div className="bg-brand-dark border-y border-white/5 relative">
-        <div className="absolute inset-0 bg-[url('/pattern-grid.png')] opacity-5" />
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
         <StatsSection
           title="Impacto que Trasciende"
           subtitle="Nuestra trayectoria resumida en cifras que generan confianza."
@@ -113,20 +122,20 @@ export function QuienesSomosPage() {
       </div>
 
       {/* ───────── VALUES GRID ───────── */}
-      <section className="py-24 bg-brand-soft relative">
+      <section className="relative bg-brand-soft py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <MotionWrapper direction="up">
-            <div className="text-center mb-16">
+            <div className="mb-12 text-center md:mb-16">
               <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">
                 Nuestra Cultura
               </span>
-              <h2 className="text-4xl font-bold text-brand-dark">
+              <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
                 Pilares de Nuestra Excelencia
               </h2>
             </div>
           </MotionWrapper>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {[
               {
                 icon: ShieldCheck,
@@ -166,11 +175,11 @@ export function QuienesSomosPage() {
               },
             ].map((value, idx) => (
               <MotionWrapper key={idx} delay={idx * 0.1}>
-                <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                  <div className="w-14 h-14 bg-brand-soft rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl sm:p-8">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand-primary transition-colors duration-300 group-hover:bg-brand-primary group-hover:text-white sm:mb-6 sm:h-14 sm:w-14">
                     <value.icon size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-3">
+                  <h3 className="mb-3 text-lg font-bold text-brand-dark sm:text-xl">
                     {value.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-sm">
@@ -184,22 +193,22 @@ export function QuienesSomosPage() {
       </section>
 
       {/* ───────── CTA ───────── */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-4xl px-4 text-center bg-brand-primary rounded-[2.5rem] p-12 relative overflow-hidden shadow-2xl">
+      <section className="bg-white py-16 md:py-20">
+        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-brand-primary p-8 text-center shadow-2xl sm:rounded-[2.5rem] sm:p-12">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-dark/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="mb-5 text-2xl font-bold text-white sm:text-3xl md:mb-6 md:text-4xl">
               ¿Listo para trabajar con expertos?
             </h2>
-            <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="mx-auto mb-8 max-w-2xl text-base text-white/90 sm:text-lg">
               Descubre por qué somos la elección de confianza para arquitectos,
               constructores y administradores de edificios.
             </p>
             <a
               href="/contacto"
-              className="inline-flex items-center justify-center bg-white text-brand-dark px-8 py-4 rounded-xl font-bold hover:bg-brand-highlight hover:text-white transition-all duration-300 shadow-lg transform hover:-translate-y-1"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-white px-8 py-4 font-bold text-brand-dark shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-brand-highlight hover:text-white sm:w-auto"
             >
               Contactar al Equipo
             </a>

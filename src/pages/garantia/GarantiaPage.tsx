@@ -1,7 +1,14 @@
 import { Seo } from "../../components/seo/Seo";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { MotionWrapper } from "../../components/ui/MotionWrapper";
-import { ShieldCheck, Award, Clock, FileText, CheckCircle, Users } from "lucide-react";
+import {
+  ShieldCheck,
+  Award,
+  Clock,
+  FileText,
+  CheckCircle,
+  Users,
+} from "lucide-react";
 
 export function GarantiaPage() {
   return (
@@ -15,25 +22,26 @@ export function GarantiaPage() {
       <PageHeader
         title="Compromiso de Seguridad"
         subtitle="En NOVA, la seguridad no es una opción, es nuestra base. Operamos bajo las más estrictas normativas nacionales e internacionales."
-        image="/warranty/warranty-hero.jpg"
+        image="/seguridad.webp"
         breadcrumbs={[{ label: "Garantía" }]}
       />
 
       {/* ───────── TRUST GRID ───────── */}
-      <section className="py-24 bg-white">
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <MotionWrapper direction="right">
-              <div className="relative p-8">
+              <div className="relative p-2 sm:p-8">
                 <div className="absolute inset-0 bg-brand-soft rounded-[3rem] -rotate-3 transform z-0" />
-                <div className="relative z-10 bg-white rounded-[2rem] p-10 shadow-xl border border-slate-100">
-                  <div className="flex items-center gap-6 mb-8">
-                    <div className="w-20 h-20 bg-brand-primary text-white rounded-2xl flex items-center justify-center">
-                      <ShieldCheck size={40} />
+                <div className="relative z-10 rounded-[1.8rem] border border-slate-100 bg-white p-6 shadow-xl sm:rounded-[2rem] sm:p-10">
+                  <div className="mb-6 flex items-center gap-4 sm:mb-8 sm:gap-6">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-primary text-white sm:h-20 sm:w-20">
+                      <ShieldCheck size={34} />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-brand-dark">Garantía Total NOVA</h3>
+                      <h3 className="text-xl font-bold text-brand-dark sm:text-2xl">
+                        Garantía Total NOVA
+                      </h3>
                       <p className="text-slate-500">Cobertura Integral</p>
                     </div>
                   </div>
@@ -43,10 +51,16 @@ export function GarantiaPage() {
                       "1 año de mantenimiento preventivo gratuito.",
                       "Cobertura por vicios ocultos.",
                       "Reposición inmediata de componentes críticos.",
-                      "Soporte técnico prioritario."
+                      "Soporte técnico prioritario.",
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-slate-700">
-                        <CheckCircle size={20} className="text-brand-highlight flex-shrink-0" />
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-slate-700"
+                      >
+                        <CheckCircle
+                          size={20}
+                          className="text-brand-highlight flex-shrink-0"
+                        />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -57,71 +71,95 @@ export function GarantiaPage() {
 
             <MotionWrapper direction="left">
               <div>
-                <h2 className="text-4xl font-bold text-brand-dark mb-6">Tranquilidad para su Inversión</h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  Entendemos que un ascensor es una inversión a largo plazo. Por eso, diseñamos nuestros contratos y políticas de garantía para proteger su capital y asegurar la máxima disponibilidad operativa.
+                <h2 className="mb-5 text-3xl font-bold text-brand-dark sm:text-4xl md:mb-6">
+                  Tranquilidad para su Inversión
+                </h2>
+                <p className="mb-7 text-base leading-relaxed text-slate-600 sm:text-lg md:mb-8">
+                  Entendemos que un ascensor es una inversión a largo plazo. Por
+                  eso, diseñamos nuestros contratos y políticas de garantía para
+                  proteger su capital y asegurar la máxima disponibilidad
+                  operativa.
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="bg-brand-soft p-6 rounded-xl border border-slate-200 hover:border-brand-primary transition-colors">
+                <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
+                  <div className="rounded-xl border border-slate-200 bg-brand-soft p-6 transition-colors hover:border-brand-primary">
                     <FileText className="text-brand-primary mb-4" size={32} />
-                    <h4 className="font-bold text-brand-dark mb-2">Contratos Transparentes</h4>
-                    <p className="text-sm text-slate-600">Sin letras chicas. Especificaciones técnicas claras y cronogramas definidos.</p>
+                    <h4 className="font-bold text-brand-dark mb-2">
+                      Contratos Transparentes
+                    </h4>
+                    <p className="text-sm text-slate-600">
+                      Sin letras chicas. Especificaciones técnicas claras y
+                      cronogramas definidos.
+                    </p>
                   </div>
-                  <div className="bg-brand-soft p-6 rounded-xl border border-slate-200 hover:border-brand-primary transition-colors">
+                  <div className="rounded-xl border border-slate-200 bg-brand-soft p-6 transition-colors hover:border-brand-primary">
                     <Users className="text-brand-primary mb-4" size={32} />
-                    <h4 className="font-bold text-brand-dark mb-2">Respaldo Técnico</h4>
-                    <p className="text-sm text-slate-600">Equipo de ingeniería listo para resolver cualquier incidencia compleja.</p>
+                    <h4 className="font-bold text-brand-dark mb-2">
+                      Respaldo Técnico
+                    </h4>
+                    <p className="text-sm text-slate-600">
+                      Equipo de ingeniería listo para resolver cualquier
+                      incidencia compleja.
+                    </p>
                   </div>
                 </div>
               </div>
             </MotionWrapper>
-
           </div>
         </div>
       </section>
 
       {/* ───────── CERTIFICATIONS ───────── */}
-      <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
+      <section className="relative overflow-hidden bg-brand-dark py-16 text-white md:py-24">
         {/* Background Decoration */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at center, white 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at center, white 1px, transparent 1px)",
+            backgroundSize: "30px 30px",
+          }}
+        ></div>
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Normativas y Cumplimiento</h2>
+          <div className="mb-12 text-center md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Normativas y Cumplimiento
+            </h2>
             <p className="text-slate-300 max-w-2xl mx-auto">
-              Nuestros procesos y equipos cumplen estrictamente con los estándares más exigentes del mercado.
+              Nuestros procesos y equipos cumplen estrictamente con los
+              estándares más exigentes del mercado.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
             {[
               {
                 title: "Norma Técnica Peruana",
                 code: "NTP",
                 desc: "Cumplimiento total del Reglamento Nacional de Edificaciones y normas de seguridad eléctrica.",
-                icon: <FileText />
+                icon: <FileText />,
               },
               {
                 title: "Estándar Europeo",
                 code: "EN 81-20/50",
                 desc: "Seguimos las directrices de seguridad más actualizadas de la Unión Europea para ascensores.",
-                icon: <Award />
+                icon: <Award />,
               },
               {
                 title: "Seguridad Ocupacional",
                 code: "SST",
                 desc: "Protocolos de seguridad y salud en el trabajo para proteger a nuestro personal y a sus usuarios.",
-                icon: <ShieldCheck />
-              }
+                icon: <ShieldCheck />,
+              },
             ].map((cert, i) => (
               <MotionWrapper key={i} delay={i * 0.2}>
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 bg-brand-primary/20 rounded-lg flex items-center justify-center text-brand-primary">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg transition-colors hover:bg-white/10 sm:p-8">
+                  <div className="mb-6 flex items-start justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/20 text-brand-primary">
                       {cert.icon}
                     </div>
-                    <span className="font-mono text-brand-highlight font-bold bg-brand-highlight/10 px-3 py-1 rounded text-sm">
+                    <span className="rounded bg-brand-highlight/10 px-3 py-1 font-mono text-xs font-bold text-brand-highlight sm:text-sm">
                       {cert.code}
                     </span>
                   </div>
@@ -137,10 +175,10 @@ export function GarantiaPage() {
       </section>
 
       {/* ───────── MAINTENANCE ───────── */}
-      <section className="py-24 bg-slate-50">
+      <section className="bg-slate-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden grid lg:grid-cols-2">
-            <div className="p-12 flex flex-col justify-center">
+            <div className="flex flex-col justify-center p-6 sm:p-8 md:p-12">
               <div className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-wider text-sm mb-4">
                 <Clock size={16} />
                 <span>Post-Venta</span>
@@ -149,11 +187,13 @@ export function GarantiaPage() {
                 El Mantenimiento no es un gasto, es seguridad.
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Un plan de mantenimiento adecuado previene el 85% de las fallas mecánicas. Nuestros programas incluyen visitas mensuales, limpieza técnica, ajustes y lubricación de componentes vitales.
+                Un plan de mantenimiento adecuado previene el 85% de las fallas
+                mecánicas. Nuestros programas incluyen visitas mensuales,
+                limpieza técnica, ajustes y lubricación de componentes vitales.
               </p>
               <a
                 href="/contacto"
-                className="inline-block bg-brand-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-primary transition-colors text-center w-max"
+                className="inline-block w-full rounded-lg bg-brand-dark px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-brand-primary sm:w-max"
               >
                 Ver Planes de Mantenimiento
               </a>
