@@ -1,4 +1,11 @@
-import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 import { COMPANY_INFO, NAVIGATION_ITEMS } from "@/constants/company";
 
 export function Footer() {
@@ -14,8 +21,10 @@ export function Footer() {
             </div>
 
             <p className="max-w-md text-sm text-slate-600 leading-relaxed">
-              Empresa peruana especializada en fabricación, instalación, mantenimiento y reparación de ascensores y sistemas de transporte vertical. 
-              Garantizamos seguridad, eficiencia y cumplimiento de normas técnicas vigentes.
+              Empresa peruana especializada en fabricación, instalación,
+              mantenimiento y reparación de ascensores y sistemas de transporte
+              vertical. Garantizamos seguridad, eficiencia y cumplimiento de
+              normas técnicas vigentes.
             </p>
 
             <div className="space-y-3">
@@ -25,7 +34,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-600">
                 <Phone size={16} className="text-brand-primary" />
-                <a 
+                <a
                   href={`tel:${COMPANY_INFO.phone}`}
                   className="hover:text-brand-primary transition"
                 >
@@ -34,7 +43,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-600">
                 <Mail size={16} className="text-brand-primary" />
-                <a 
+                <a
                   href={`mailto:${COMPANY_INFO.email}`}
                   className="hover:text-brand-primary transition"
                 >
@@ -45,8 +54,8 @@ export function Footer() {
 
             <div className="flex items-center gap-4 pt-2 text-brand-dark">
               {COMPANY_INFO.social.facebook && (
-                <a 
-                  href={COMPANY_INFO.social.facebook} 
+                <a
+                  href={COMPANY_INFO.social.facebook}
                   className="hover:text-brand-highlight transition"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,8 +65,8 @@ export function Footer() {
                 </a>
               )}
               {COMPANY_INFO.social.instagram && (
-                <a 
-                  href={COMPANY_INFO.social.instagram} 
+                <a
+                  href={COMPANY_INFO.social.instagram}
                   className="hover:text-brand-highlight transition"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,8 +76,8 @@ export function Footer() {
                 </a>
               )}
               {COMPANY_INFO.social.linkedin && (
-                <a 
-                  href={COMPANY_INFO.social.linkedin} 
+                <a
+                  href={COMPANY_INFO.social.linkedin}
                   className="hover:text-brand-highlight transition"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -88,8 +97,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-600">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.href}>
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="hover:text-brand-primary transition"
                   >
                     {item.label}
@@ -106,17 +115,26 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <a href="/politica-privacidad" className="hover:text-brand-primary transition">
+                <a
+                  href="/politica-privacidad"
+                  className="hover:text-brand-primary transition"
+                >
                   Política de privacidad
                 </a>
               </li>
               <li>
-                <a href="/terminos-condiciones" className="hover:text-brand-primary transition">
+                <a
+                  href="/terminos-condiciones"
+                  className="hover:text-brand-primary transition"
+                >
                   Términos y condiciones
                 </a>
               </li>
               <li>
-                <a href="/libro-reclamaciones" className="hover:text-brand-primary transition">
+                <a
+                  href="/libro-reclamaciones"
+                  className="hover:text-brand-primary transition"
+                >
                   Libro de reclamaciones
                 </a>
               </li>
@@ -127,10 +145,8 @@ export function Footer() {
         <div className="mt-12 border-t border-slate-200/60 pt-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} {COMPANY_INFO.name}. Todos los derechos reservados.
-            </p>
-            <p className="text-xs text-slate-400">
-              Desarrollado con ❤️ en Perú
+              © {new Date().getFullYear()} {COMPANY_INFO.name} Todos los
+              derechos reservados.
             </p>
           </div>
         </div>

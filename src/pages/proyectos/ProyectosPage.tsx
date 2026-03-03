@@ -5,19 +5,81 @@ import { MapPin, Building, ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/constants/company";
 import { motion, AnimatePresence } from "framer-motion";
 
+type ClientLogo = {
+  name: string;
+  src: string;
+};
+
 const CATEGORIES = [
-  { id: 'all', label: 'Todos' },
-  { id: 'equipo-completo', label: 'Proyectos Integrales' },
-  { id: 'modernizacion', label: 'Modernizaciones' },
-  { id: 'mantenimiento', label: 'Mantenimiento' },
+  { id: "all", label: "Todos" },
+  { id: "equipo-completo", label: "Proyectos Integrales" },
+  { id: "modernizacion", label: "Modernizaciones" },
+  { id: "mantenimiento", label: "Mantenimiento" },
 ];
 
-export function ProyectosPage() {
-  const [activeCategory, setActiveCategory] = useState('all');
+const CLIENT_LOGOS: ClientLogo[] = [
+  { name: "Cayetano", src: "/logosEmpresas/cayetano.webp" },
+  { name: "CCC", src: "/logosEmpresas/ccc.webp" },
+  { name: "Clinica Ortega", src: "/logosEmpresas/clinicaortega.webp" },
+  { name: "Corte Huanuco", src: "/logosEmpresas/cortehuanuco.webp" },
+  { name: "Corte Junin", src: "/logosEmpresas/cortejunin.webp" },
+  { name: "Corte Selva", src: "/logosEmpresas/corteselva.webp" },
+  { name: "DAC", src: "/logosEmpresas/dac.webp" },
+  { name: "Emilima", src: "/logosEmpresas/emilima.webp" },
+  { name: "Essalud", src: "/logosEmpresas/essalud.webp" },
+  { name: "GORE", src: "/logosEmpresas/gore.webp" },
+  { name: "Hospital La Merced", src: "/logosEmpresas/hlamerced.webp" },
+  { name: "IREN", src: "/logosEmpresas/iren.webp" },
+  { name: "Legado Lima", src: "/logosEmpresas/legadolima.webp" },
+  { name: "Municipalidad Huancayo", src: "/logosEmpresas/munihuancayo.webp" },
+  { name: "UNCP", src: "/logosEmpresas/uncp.webp" },
+  { name: "UNFV", src: "/logosEmpresas/unfv.webp" },
+  { name: "UPLA", src: "/logosEmpresas/upla.webp" },
+];
 
-  const filteredProjects = activeCategory === 'all'
-    ? PROJECTS
-    : PROJECTS.filter(p => p.category === activeCategory);
+function LogoCarouselRow({
+  logos,
+  reverse = false,
+  duration = 42,
+}: {
+  logos: ClientLogo[];
+  reverse?: boolean;
+  duration?: number;
+}) {
+  const duplicatedLogos = [...logos, ...logos];
+
+  return (
+    <div className="relative overflow-hidden">
+      <motion.div
+        className="flex w-max gap-8 py-4"
+        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ duration, ease: "linear", repeat: Infinity }}
+      >
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={`${logo.name}-${index}`}
+            className="group flex h-32 w-[280px] shrink-0 items-center justify-center rounded-2xl border border-slate-200/90 bg-white px-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+          >
+            <img
+              src={logo.src}
+              alt={logo.name}
+              loading="lazy"
+              className="max-h-16 w-auto object-contain opacity-90 transition-all duration-300 group-hover:opacity-100"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
+export function ProyectosPage() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredProjects =
+    activeCategory === "all"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
     <>
@@ -37,7 +99,6 @@ export function ProyectosPage() {
       {/* ───────── FILTERS & GALLERY ───────── */}
       <section className="py-24 bg-white min-h-screen">
         <div className="mx-auto max-w-7xl px-4">
-
           {/* Filter Bar */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {CATEGORIES.map((cat) => (
@@ -46,9 +107,10 @@ export function ProyectosPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`
                   px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border-2
-                  ${activeCategory === cat.id
-                    ? 'bg-brand-dark text-white border-brand-dark shadow-lg scale-105'
-                    : 'bg-white text-slate-500 border-slate-200 hover:border-brand-primary hover:text-brand-primary'
+                  ${
+                    activeCategory === cat.id
+                      ? "bg-brand-dark text-white border-brand-dark shadow-lg scale-105"
+                      : "bg-white text-slate-500 border-slate-200 hover:border-brand-primary hover:text-brand-primary"
                   }
                 `}
               >
@@ -58,7 +120,10 @@ export function ProyectosPage() {
           </div>
 
           {/* Masonry-ish Grid */}
-          <motion.div layout className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            layout
+            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          >
             <AnimatePresence>
               {filteredProjects.map((project) => (
                 <motion.div
@@ -118,7 +183,8 @@ export function ProyectosPage() {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                        {CATEGORIES.find(c => c.id === project.category)?.label || project.category}
+                        {CATEGORIES.find((c) => c.id === project.category)
+                          ?.label || project.category}
                       </span>
                     </div>
                   </div>
@@ -129,10 +195,11 @@ export function ProyectosPage() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-slate-400 text-lg">No se encontraron proyectos en esta categoría.</p>
+              <p className="text-slate-400 text-lg">
+                No se encontraron proyectos en esta categoría.
+              </p>
             </div>
           )}
-
         </div>
       </section>
 
@@ -142,14 +209,10 @@ export function ProyectosPage() {
           <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">
             Confían en Nosotros
           </h3>
-          <div className="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Client Logos Placeholders - You would replace these with real SVGs/PNGs */}
-            {["GORE Junín", "Hospital Carrión", "Essalud", "Municipalidad de Huancayo", "UPLA"].map((client, i) => (
-              <div key={i} className="flex items-center gap-3 text-xl font-bold text-slate-400 hover:text-brand-dark transition-colors cursor-default">
-                <Building size={32} />
-                <span>{client}</span>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-brand-soft to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-brand-soft to-transparent" />
+            <LogoCarouselRow logos={CLIENT_LOGOS} duration={75} />
           </div>
         </div>
       </section>

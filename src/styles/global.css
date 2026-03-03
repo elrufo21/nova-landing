@@ -27,6 +27,12 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 * {
   font-family: var(--font-family-base);
 }
@@ -61,4 +67,31 @@ body {
 /* Selection */
 ::selection {
   @apply bg-brand-soft text-brand-dark;
+}
+
+.text-rainbow-animated {
+  background-image: linear-gradient(
+    90deg,
+    #ef4444,
+    #f59e0b,
+    #eab308,
+    #22c55e,
+    #06b6d4,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899,
+    #ef4444
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow-shift 3.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-rainbow-animated {
+    animation: none;
+    background-position: 100% 50%;
+  }
 }

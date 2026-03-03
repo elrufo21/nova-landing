@@ -1,4 +1,14 @@
-import { Wrench, ShieldCheck, Headset, MessageCircle, Building, Users, Award, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Wrench,
+  ShieldCheck,
+  Headset,
+  MessageCircle,
+  Building,
+  Users,
+  Award,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 import { Seo } from "../../components/seo/Seo";
 import { HeroSection } from "../../components/ui/HeroSection";
@@ -25,12 +35,12 @@ export function HomePage() {
           {
             label: "Iniciar Proyecto",
             href: "/contacto",
-            variant: "primary"
+            variant: "primary",
           },
           {
             label: "Soporte Técnico",
-            href: `https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, '')}`,
-            variant: "secondary"
+            href: `https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, "")}`,
+            variant: "secondary",
           },
         ]}
         stats={[
@@ -38,45 +48,53 @@ export function HomePage() {
             number: "12+",
             label: "Años de Excelencia",
             icon: <Building className="w-5 h-5" />,
-            delay: 0
+            delay: 0,
           },
           {
             number: "600+",
             label: "Proyectos Ejecutados",
             icon: <Award className="w-5 h-5" />,
-            delay: 0.1
+            delay: 0.1,
           },
           {
-            number: "98%",
-            label: "Satisfacción Cliente",
+            number: "20+",
+            label: "Clientes que confian en nosotros",
             icon: <Users className="w-5 h-5" />,
-            delay: 0.2
+            delay: 0.2,
           },
           {
             number: "24/7",
             label: "Respuesta Inmediata",
             icon: <Headset className="w-5 h-5" />,
-            delay: 0.3
-          }
+            delay: 0.3,
+          },
         ]}
       />
 
       {/* ───────── SERVICES SECTION ───────── */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #000 1px, transparent 0)', backgroundSize: '40px 40px' }}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, #000 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
         />
 
         <div className="mx-auto max-w-7xl px-4 relative z-10">
           <MotionWrapper direction="up">
             <div className="text-center mb-16">
-              <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">Nuestras Soluciones</span>
+              <span className="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2 block">
+                Nuestras Soluciones
+              </span>
               <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">
                 Ciclo Integral de Servicio
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Gestión completa de sus activos verticales, desde el diseño y fabricación hasta la modernización y mantenimiento preventivo.
+                Gestión completa de sus activos verticales, desde el diseño y
+                fabricación hasta la modernización y mantenimiento preventivo.
               </p>
             </div>
           </MotionWrapper>
@@ -118,17 +136,27 @@ export function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <MotionWrapper direction="right">
               <div>
-                <span className="text-brand-highlight font-bold tracking-wider uppercase text-sm mb-2 block">Portafolio</span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Proyectos Emblemáticos</h2>
+                <span className="text-brand-highlight font-bold tracking-wider uppercase text-sm mb-2 block">
+                  Portafolio
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  Proyectos Emblemáticos
+                </h2>
                 <p className="text-slate-400 max-w-xl">
-                  La confianza de nuestros clientes se construye proyecto a proyecto. Conoce algunas de nuestras instalaciones más destacadas.
+                  La confianza de nuestros clientes se construye proyecto a
+                  proyecto. Conoce algunas de nuestras instalaciones más
+                  destacadas.
                 </p>
               </div>
             </MotionWrapper>
 
             <MotionWrapper direction="left">
-              <a href="/proyectos" className="group flex items-center gap-2 text-white font-semibold border-b border-brand-primary pb-1 hover:text-brand-primary transition-colors">
-                Ver todos los proyectos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <a
+                href="/proyectos"
+                className="group flex items-center gap-2 text-white font-semibold border-b border-brand-primary pb-1 hover:text-brand-primary transition-colors"
+              >
+                Ver todos los proyectos{" "}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </MotionWrapper>
           </div>
@@ -151,8 +179,12 @@ export function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent flex items-end p-8">
                     <div className="text-white">
-                      <p className="font-bold text-lg">Equipo Técnico Calificado</p>
-                      <p className="text-sm opacity-80">Capacitación constante y certificación</p>
+                      <p className="font-bold text-lg">
+                        Equipo Técnico Calificado
+                      </p>
+                      <p className="text-sm opacity-80">
+                        Capacitación constante y certificación
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -167,7 +199,9 @@ export function HomePage() {
                   Seguridad y Confianza Certificada
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  No solo instalamos ascensores, garantizamos tranquilidad. Nuestros procesos cumplen con los más estrictos estándares internacionales y normativas locales.
+                  No solo instalamos ascensores, garantizamos tranquilidad.
+                  Nuestros procesos cumplen con los más estrictos estándares
+                  internacionales y normativas locales.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -177,7 +211,7 @@ export function HomePage() {
                     "Personal Asegurado (SCTR)",
                     "Garantía Extendida",
                     "Stock de Repuestos",
-                    "Atención 24/7"
+                    "Atención 24/7",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
@@ -189,7 +223,10 @@ export function HomePage() {
                 </div>
 
                 <div className="mt-10">
-                  <a href="/garantia" className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 rounded-xl text-brand-dark font-semibold hover:border-brand-primary hover:text-brand-primary transition-colors bg-white">
+                  <a
+                    href="/garantia"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 rounded-xl text-brand-dark font-semibold hover:border-brand-primary hover:text-brand-primary transition-colors bg-white"
+                  >
                     Conocer más sobre nuestra garantía
                   </a>
                 </div>
@@ -210,14 +247,22 @@ export function HomePage() {
               ¿Listo para elevar su proyecto?
             </h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-              Solicite una visita técnica gratuita o una cotización personalizada. Nuestro equipo de ingenieros está listo para asesorarlo.
+              Solicite una visita técnica gratuita o una cotización
+              personalizada. Nuestro equipo de ingenieros está listo para
+              asesorarlo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contacto" className="px-8 py-4 bg-white text-brand-primary font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <a
+                href="/contacto"
+                className="px-8 py-4 bg-white text-brand-primary font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              >
                 Solicitar Cotización
               </a>
-              <a href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, '')}`} className="px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-xl hover:bg-brand-dark/90 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <a
+                href={`https://wa.me/${COMPANY_INFO.whatsapp.replace(/\D/g, "")}`}
+                className="px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-xl hover:bg-brand-dark/90 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+              >
                 <MessageCircle size={20} />
                 Chat por WhatsApp
               </a>
